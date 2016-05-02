@@ -5,12 +5,21 @@
       <title>Titre</title>
    </head>
    <body>
-      
-      
-      <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+      <!--<script src="http://localhost:3000/socket.io/socket.io.js"></script>-->
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
       <script>
-         var socket = io.connect('http://localhost:3000');
-         socket.emit("event1", "Message transmis du client vers le serveur");   
+         $('body').append("<p>Bonjour !</p>");
+         
+         //var socket = io.connect('http://localhost:3000');
+         //var socket = io.connect();
+         var socket = io.connect("/messages"); // Connexion sur ne namespace "/messages"
+         socket.emit("event1", { nom: "Lefebvre", prenom: "Christophe" } );
+         
+         socket.on("event2", function(data)
+         {
+            $('body').append("<p>Evénement event2: " + data + "</p>");
+         });
       </script>
    </body>
 </html>
