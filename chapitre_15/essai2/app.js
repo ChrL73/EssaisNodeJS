@@ -28,4 +28,4 @@ app.get("/clients", function getClients(req, res, next)
    console.log("get fin");
 });
 
-app.listen(3000)
+app.listen(3000);
