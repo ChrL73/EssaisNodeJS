@@ -27,13 +27,20 @@ app.get("/2", function(req, res, next)
 
 app.get("/3", function(req, res, next)
 {
-   res.charset = "utf-8"; // Apparemment inutile, contrarement à ce qui est dit dans le livre
+   res.charset = "utf-8"; // Apparemment inutile, contrairement à ce qui est dit dans le livre
    res.json({ nom: "Bùbù", prenom: "Dédé" });
 });
 
 app.get("/4", function(req, res, next)
 {
    res.download("file.txt");
+});
+
+app.get("/5", function(req, res, next)
+{
+   //res.redirect("http://www.yahoo.fr");
+   //res.redirect("../3");
+   res.redirect("/2");
 });
 
 app.use(function(req, res)
