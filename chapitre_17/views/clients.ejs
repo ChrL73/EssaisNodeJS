@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta charset="utf-8" />
+     <title>Clients</title>
+   </head>
+
+   <body>
+      <h2><%= settings.title %></h2>
+      <ul>
+       <%var i, n = clients.length;
+         for(var i = 0 ; i < n ; ++i)
+         { %>
+           <li><%= clients[i].nom + " " + clients[i].prenom %></li>
+       <% } %>
+      </ul>
+      
+   </body>
+</html>
