@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta charset="utf-8" />
+     <title>Clients</title>
+   </head>
+
+   <body>
+      <h2>Liste des clients</h2>
+      <% if (!clients.length)
+         {%>
+            <b> Pas de clients ! </b>
+            <br><br>
+      <% }
+         else
+         { %>
+            <table>
+            <% clients.forEach(function(client)
+               { %>
+               <tr>
+                  
+               </tr>
+            <% }); %>
+            </table>
+      <% } %>
+      
+      <form action="/clients/new">
+         <input type="submit" value="Créer un client"/>
+      </form>
+   </body>
+</html>
