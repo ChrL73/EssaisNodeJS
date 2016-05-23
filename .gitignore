@@ -1,5 +1,6 @@
 *.swp
 *.swo
+.directory
 chapitre_2/node_modules/colors
 chapitre_12/log*.txt
 chapitre_13/log*.txt
